@@ -1,0 +1,68 @@
+.btn-remote {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+hr {
+    margin-top: 10px;
+}
+.form-group {
+    margin-bottom: 0px;
+}
+.btn-purple {background-color: #563D7C;}
+.btn-start {
+    background-color: #347837;
+    color: #FFFFFF;
+}
+
+.button1_0 {background-color: #F5D1D0;}
+.button1_1 {background-color: #F1C1C0;}
+.button1_2 {background-color: #EEB2B0;}
+.button1_3 {background-color: #EAA2A0;}
+.button1_4 {background-color: #E79290;}
+.button1_5 {background-color: #E3827F;}
+.button1_6 {background-color: #E0736F;}
+.button1_7 {background-color: #DC635F;}
+.button1_8 {background-color: #D9534F;}
+.button1_9 {background-color: #D6433F;}
+.button1_10 {background-color: #D2332F;}
+.button1_11 {background-color: #C32E2A;}
+.button1_12 {background-color: #B32A27;}
+.button2_0 {background-color: #FBE8CD;}
+.button2_1 {background-color: #F9DFBA;}
+.button2_2 {background-color: #F8D7A8;}
+.button2_3 {background-color: #F6CF96;}
+.button2_4 {background-color: #F5C684;}
+.button2_5 {background-color: #F3BE72;}
+.button2_6 {background-color: #F2B560;}
+.button2_7 {background-color: #F0AD4E;}
+.button2_8 {background-color: #EEA53C;}
+.button2_9 {background-color: #ED9C2A;}
+.button2_10 {background-color: #EB9418;}
+.button2_11 {background-color: #DC8913;}
+.button2_12 {background-color: #CA7E12;}
+.button3_0 {background-color: #DFECF6;}
+.button3_1 {background-color: #D0E2F2;}
+.button3_2 {background-color: #C1D9EE;}
+.button3_3 {background-color: #B1CFE9;}
+.button3_4 {background-color: #A2C6E5;}
+.button3_5 {background-color: #93BDE1;}
+.button3_6 {background-color: #83B3DC;}
+.button3_7 {background-color: #74AAD8;}
+.button3_8 {background-color: #65A0D4;}
+.button3_9 {background-color: #5597D0;}
+.button3_10 {background-color: #468ECB;}
+.button3_11 {background-color: #3885C6;}
+.button3_12 {background-color: #337AB6;}
+.button4_0 {background-color: #E4DDEE;}
+.button4_1 {background-color: #DAD0E8;}
+.button4_2 {background-color: #CFC3E1;}
+.button4_3 {background-color: #C5B6DB;}
+.button4_4 {background-color: #BAA9D5;}
+.button4_5 {background-color: #B09BCE;}
+.button4_6 {background-color: #A58EC8;}
+.button4_7 {background-color: #9B81C1;}
+.button4_8 {background-color: #9074BB;}
+.button4_9 {background-color: #8667B4;}
+.button4_10 {background-color: #7B5AAE;}
+.button4_11 {background-color: #7150A3;}
+.button4_12 {background-color: #684A96;}
