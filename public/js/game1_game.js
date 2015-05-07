@@ -64,10 +64,10 @@ function deviceMotionHandler(eventData) {
 	rot_alpha = eventData.rotationRate.alpha;
 	rot_beta = eventData.rotationRate.beta;
 	rot_gamma = eventData.rotationRate.gamma;
-	if (osUse == 1) rot_gamma /= 5;
+	if (osUse == 1) rot_gamma;
 	if ( ball_throwing == false){
 		if(Math.abs(rot_gamma) > 0.2){
-			alert(rot_gamma);
+			console.log(rot_gamma);
 			sendRotGamma(rot_gamma);
 		}
 	}
