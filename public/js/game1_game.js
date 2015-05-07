@@ -32,7 +32,7 @@ function showResult() {
 
 function deviceMotionHandler(eventData) {
 	var rotGamma = eventData.rotationRate.gamma - CALI_ROTGAMMA;
-	if ( BALL_THOWN == false){
+	if ( BALL_THOWN == false){		
 		sendRotGamma(rotGamma);
 	}
     var acceZ = eventData.acceleration.z;

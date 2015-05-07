@@ -50,7 +50,7 @@ socket.on('swing', function(recvClientId, data, time) {
 
 socket.on('rotGamma', function(recvClientId, data) {
     if (clientId == 0) { // If at main screen, do work
-       console.log(data);
+       console.log('Receive rotGamma': + data);
     }
 });
 
@@ -61,7 +61,7 @@ function sendSwing(swing) {
 
 function sendRotGamma(rotGamma) {
     console.log('Send rotGamma: ' + rotGamma);
-    socket.emit('rotGamma', clientId, rotGamma, Date.now());
+    socket.emit('rotGamma', clientId, rotGamma);
 }
 
 function getSessionId() {
