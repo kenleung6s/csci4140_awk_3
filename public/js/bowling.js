@@ -1341,7 +1341,7 @@ function track_mouse( )
 
 			
 			var mouse_position_3d = screen_position_2d_to_3d( mouse_positions[ mouse_positions.length - 1 ][ 0 ], mouse_positions[ mouse_positions.length - 1 ][ 1 ], bowling_ball[ 1 ].position.z );
-			consult.log(mouse_position_3d);
+			
 			if ( mouse_position_3d.y >= 177 && mouse_position_3d.y <= 201 )
 			{
 			
