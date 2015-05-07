@@ -75,6 +75,7 @@ function getSessionId() {
 function getClientId() {
     var pageURL = document.URL;
     var clientId = parseInt(pageURL.substr(pageURL.length - 1));
+	alert(clientId);
     if (isNaN(clientId))
         return null;
     else
