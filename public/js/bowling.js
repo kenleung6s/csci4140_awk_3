@@ -1956,21 +1956,46 @@ function handle_power_div( )
 function handle_round_div( )
 {
 	
-	//round_div.innerHTML = "Round: " + game_round;
+
+	
+}
+
+function handle_score_div( )
+{
+		//round_div.innerHTML = "Round: " + game_round;
+	score_div.innerHTML = "";
+	console.log(bowling_pins.length);
 	var p1html = "";
 	var p2html = "";
 	var p3html = "";
 	var p4html = "";
+	var p1total = 1;
+	var p2total = 2;
+	var p3total = 3;
+	var p4total = 4;
 	
 	p1score[1] = 12;
 	p1score[2] = 24;
 	p2score[1] = 12;
 	p2score[2] = 24;
 	for (i=1; i<11; i++){
-		if (p1score[i])	p1html += "<td>"+p1score[i]+"</td>";
-		if (p2score[i])	p2html += "<td>"+p2score[i]+"</td>";
-		if (p3score[i])	p3html += "<td>"+p3score[i]+"</td>";
-		if (p4score[i])	p4html += "<td>"+p4score[i]+"</td>";
+		if (p1score[i]){
+			p1html += "<td>"+p1score[i]+"</td>";
+			p1total += p1score[i];
+		}
+		if (p2score[i]){
+			p2html += "<td>"+p2score[i]+"</td>";
+			p2total += p2score[i];
+		}
+		if (p3score[i]){
+			p3html += "<td>"+p3score[i]+"</td>";
+			p3total += p3score[i];
+		}
+		if (p4score[i]){
+			p4html += "<td>"+p4score[i]+"</td>";
+			p4total += p4score[i];
+		}
+	
 	}
 	
 	
@@ -2001,12 +2026,6 @@ function handle_round_div( )
 	temp += "</tr></table>"
 		
 round_div.innerHTML = temp;
-	
-}
-
-function handle_score_div( )
-{
-	
 	
 	
 }
