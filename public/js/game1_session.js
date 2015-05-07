@@ -54,7 +54,7 @@ socket.on('rotGamma', function(recvClientId, data) {
        console.log('Receive rotGamma:' + data);
 	   rotGamma = data;
 	   if(play == true){
-		   bowling_ball[ 0 ].velocity.set( 10, 0, 0 );
+		   bowling_ball[ 0 ].velocity.set( rotGamma*100, 0, 0 );
 	   }
     }
 });
