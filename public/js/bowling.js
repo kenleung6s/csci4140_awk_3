@@ -1980,7 +1980,7 @@ function handle_score_div( )
 	
 	
 		
-	temp = "<table class = "table"> \
+	temp = "<table class = 'table'> \
 	<tr> \
     <th></th> \
     <th>1</th> \
