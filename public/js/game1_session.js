@@ -82,6 +82,7 @@ function sendThrowMotion(){
 	var fy = -169144.13881713708;
 	console.log('Send throwMotion: ' + 'fx:'+fx+' fy:'+fy);
     socket.emit('throwMotion', clientId, throwMotion);
+	alert("asdg");
 }
 
 function getSessionId() {
