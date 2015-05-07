@@ -77,11 +77,11 @@ function sendRotGamma(rotGamma) {
 }
 
 function sendThrowMotion(){
-
+	alert("a**");
 	var fx = -4347.106480634161;
 	var fy = -169144.13881713708;
-	console.log('Send throwMotion: ' + 'fx:'+fx+' fy:'+fy);
-    socket.emit('throwMotion', clientId, throwMotion);
+	console.log('Send throwMotion: ' + 'fx:' + fx + ' fy:'+fy);
+    socket.emit('throwMotion', clientId, fx,fy);
 	alert("asdg");
 }
 
