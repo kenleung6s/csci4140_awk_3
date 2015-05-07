@@ -1799,10 +1799,7 @@ function monitor_bowling_pins( )
 
 function reset_bowling_pins( )
 {
-	if (currentPlayer == 1) p1score[game_round] = 20;
-	if (currentPlayer == 2) p2score[game_round] = 20;
-	if (currentPlayer == 3) p3score[game_round] = 20;
-	if (currentPlayer == 4) p4score[game_round] = 20;
+	
 	var i = bowling_pins.length;
 			
 	while ( i-- )
@@ -1981,14 +1978,11 @@ function handle_score_div( )
 	var p3total = 3;
 	var p4total = 4;
 	
-	var count=0;
-	for (i=0; i<10; i++){
-		if (hitRecord[i] == true) count += 1;
-	}
-	if (currentPlayer == 1) p1score[game_round] -= 5;
-	if (currentPlayer == 2) p2score[game_round] -= 5;
-	if (currentPlayer == 3) p3score[game_round] -= 5;
-	if (currentPlayer == 4) p4score[game_round] -= 5;
+	if (currentPlayer == 1) p1score[game_round] = 20-current_round_throws*5;
+	if (currentPlayer == 2) p2score[game_round] = 20-current_round_throws*5;
+	if (currentPlayer == 3) p3score[game_round] = 20-current_round_throws*5;
+	if (currentPlayer == 4) p4score[game_round] = 20-current_round_throws*5;
+	
 	for (i=1; i<11; i++){
 		if (p1score[i]){
 			p1html += "<td>"+p1score[i]+"</td>";
@@ -2046,7 +2040,10 @@ function handle_game_reset( )
 	
 	if ( game_round == 11 )
 	{
-		
+		if (currentPlayer == 1) p1score[game_round] -= 5;
+		if (currentPlayer == 2) p2score[game_round] -= 5;
+		if (currentPlayer == 3) p3score[game_round] -= 5;
+		if (currentPlayer == 4) p4score[game_round] -= 5;
 		play = false;
 		
 		apply_wind_gust = false;
