@@ -102,8 +102,7 @@ function startGame_ScreenSide() {
     }
     setTimeout(showResult, 6000);
     console.log("Start game");
-	var list = document.getElementById("top")
-	document.removeChild(list);
+
 	set_system_settings_level();
 }
 
