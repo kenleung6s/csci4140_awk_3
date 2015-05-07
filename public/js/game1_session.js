@@ -28,7 +28,7 @@ socket.on('rotGamma', function(recvClientId, data) {
 		for(i=0; i<joinedPlayers.length; i++) if (joinedPlayers[i] == recvClientId) found = true;
 		if (found == false) joinedPlayers.push(recvClientId);
 		if (recvClientId = currentPlayer){
-		   //console.log('Receive id '+recvClientId+' rotGamma:' + data);
+		   console.log('Receive id '+recvClientId+' rotGamma:' + data);
 		   
 		   rotGamma = data;
 		   
