@@ -1970,7 +1970,7 @@ function handle_round_div( )
 function handle_score_div( )
 {
 		//round_div.innerHTML = "Round: " + game_round;
-	score_div.innerHTML = "Player"+currentPlayer+"'s Turn";
+	temp = "Player"+currentPlayer+"'s Turn <br>";
 	var p1html = "";
 	var p2html = "";
 	var p3html = "";
@@ -1980,10 +1980,6 @@ function handle_score_div( )
 	var p3total = 3;
 	var p4total = 4;
 	
-	p1score[1] = 12;
-	p1score[2] = 24;
-	p2score[1] = 12;
-	p2score[2] = 24;
 	for (i=1; i<11; i++){
 		if (p1score[i]){
 			p1html += "<td>"+p1score[i]+"</td>";
@@ -2006,7 +2002,7 @@ function handle_score_div( )
 	
 	
 		
-	temp = "<table class = 'table table-bordered'> \
+	temp += "<table class = 'table table-bordered'> \
 	<tr> \
     <th>Round"+game_round+"</th> \
     <th>1</th> \
