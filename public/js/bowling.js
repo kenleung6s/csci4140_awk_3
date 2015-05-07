@@ -1777,12 +1777,10 @@ function monitor_bowling_pins( )
 				tween.start( );
 				
 			}
-			if (current_round_throws == 2){
-				round -= 1;
-			} else {
+			
 				current_round_throws = 0;			
 				maxReset = 0;
-			}
+			
 		}, 10 );
 		
 		timers.push( timer );
