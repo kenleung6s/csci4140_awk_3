@@ -53,7 +53,7 @@ socket.on('rotGamma', function(recvClientId, data) {
     if (clientId == 0) { // If at main screen, do work
        //console.log('Receive rotGamma:' + data);
 	   rotGamma = data;
-	   if(play == true){
+	   if((play == true)&&(bowling_ball_thrown == false)){
 		   bowling_ball[ 0 ].velocity.set( rotGamma*100, 0, 0 );
 	   }
     }
