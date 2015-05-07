@@ -69,4 +69,12 @@ io.on('connection', function (socket) {
             }
         }
     });
+	socket.on('rotGamma', function (clientId, data) {
+        console.log('rotGamma: id ' + clientId + ', data ' + data);
+        for (var roomNum in socket.rooms) {
+            if (socket.rooms[roomNum] != socket.id) {
+                io.to(socket.rooms[roomNum]).emit('rotGamma', clientId, data);
+            }
+        }
+    });
 });

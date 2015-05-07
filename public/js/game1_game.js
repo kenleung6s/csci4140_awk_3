@@ -1,7 +1,8 @@
 ﻿var MIN_ACCE = 1;
 var NUM_OF_LEVELS = 12;
 var NUM_OF_PLAYERS = 4;
-
+var CALI_ROTGAMMA = 0;
+var BALL_THOWN = false;
 function showResult() {
     var localClientScore = [0,0,0,0];
     for (var i = 0; i < NUM_OF_PLAYERS; ++i)
@@ -30,10 +31,18 @@ function showResult() {
 }
 
 function deviceMotionHandler(eventData) {
+	var rotGamma = eventData.rotationRate.gamma - CALI_ROTATEGAMMA;
+	if ( BALL_THOWN == false){
+		sendRotGamma(rotGamma);
+	}
     var acceZ = eventData.acceleration.z;
     if (acceZ > MIN_ACCE) {
         sendSwing(acceZ);
     }
+}
+
+function calibrate(){
+	CALI_ROTATEGAMMA = eventData.rotationRate.gamma;
 }
 
 function round(val) {
