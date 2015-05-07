@@ -6,9 +6,12 @@ var clientScore = [0, 0, 0, 0];
 var clientReadyEnd = [false, false, false, false];
 var winner = 0;
 var rotGamma = 0;
+var joinedPlayers = [];
+var currentPlayer = 1;
 
 socket.on('register', function(sId, cId) {
     console.log('Received register: ' + sId + ' ' + cId);
+	joinedPlayers.push(cid);
     sessionId = sId;
     clientId = getClientId();
     if (clientId == 0) { // If at main screen, do work

@@ -139,6 +139,8 @@ var p2score = [];
 var p3score = [];
 var p4score = [];
 
+var currentPlayer;
+
 function set_system_settings_level( )
 {
 	
@@ -1685,7 +1687,8 @@ function monitor_bowling_pins( )
 		     Math.abs( bowling_pin[ 1 ].position.z - bowling_pin[ 0 ].initPosition.z ) > distance )
 		{
 			
-			resets += 1;			
+			resets += 1;
+			
 			bowling_pins_reset = false;
 			
 			if ( bowling_pin[ 1 ].visible )
@@ -1698,6 +1701,10 @@ function monitor_bowling_pins( )
 		}
 		
 	}
+	if (currentPlayer == 1) p1score[game_round] = hit_bowling_pins.length;
+	if (currentPlayer == 2) p2score[game_round] = hit_bowling_pins.length;
+	if (currentPlayer == 3) p3score[game_round] = hit_bowling_pins.length;
+	if (currentPlayer == 4) p4score[game_round] = hit_bowling_pins.length;
 	
 	if ( hit_bowling_pins.length > 0 && ( new Date( ) ).valueOf( ) - hit_sound_effect_played > 2000 )
 	{
@@ -1745,7 +1752,8 @@ function monitor_bowling_pins( )
 			
 			reset_bowling_ball( );
 	
-			game_round += 1;
+			if (currentPlayer % joinedPlayers.length == 0) game_round += 1;
+			currentPlayer = (currentPlayer % joinedPlayers.length) + 1;
 			
 			if ( current_round_throws == 1 )
 			{
@@ -1962,7 +1970,7 @@ function handle_round_div( )
 function handle_score_div( )
 {
 		//round_div.innerHTML = "Round: " + game_round;
-	score_div.innerHTML = "";
+	score_div.innerHTML = "Player"+currentPlayer+"'s Turn";
 	console.log(hit_bowling_pins.length);
 	var p1html = "";
 	var p2html = "";
@@ -2001,7 +2009,7 @@ function handle_score_div( )
 		
 	temp = "<table class = 'table table-bordered'> \
 	<tr> \
-    <th></th> \
+    <th>Round"+game_round+"</th> \
     <th>1</th> \
     <th>2</th> \
     <th>3</th> \
