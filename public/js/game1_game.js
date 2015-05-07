@@ -49,7 +49,7 @@ function releaseBall(){
 	fx1 = rot_beta;
 
 	var fx = (fx1-fx0)*-4000;
-	var fy = (fy1-fy0)*-14000;
+	var fy = (fy1-fy0)*-18000;
 	sendThrowMotion(fx,fy);
 	//alert('fx:'+fx+' fy:'+fy);
 	ball_throwing = false;
