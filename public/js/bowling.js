@@ -1956,7 +1956,7 @@ function handle_power_div( )
 function handle_round_div( )
 {
 	
-	round_div.innerHTML = "Round: " + game_round;
+	//round_div.innerHTML = "Round: " + game_round;
 	var p1html = "";
 	var p2html = "";
 	var p3html = "";
@@ -2000,7 +2000,7 @@ function handle_round_div( )
 	temp += "</tr><tr><td>Player4</td>"
 	temp += "</tr></table>"
 		
-score_div.innerHTML = temp;
+round_div.innerHTML = temp;
 	
 }
 
