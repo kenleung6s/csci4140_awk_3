@@ -1960,7 +1960,7 @@ function handle_score_div( )
 	
 	
 		
-		score_div.innerHTML = "<table>  <tr>    <th>dsf</th>    <th>sdf</th>    <th></th>    <th>sdf</th>    <th></th>  </tr>  <tr>    <td></td>    <td></td>    <td></td>    <td></td>    <td></td>  </tr></table>";
+		score_div.innerHTML = "<table class='table'>  <tr>    <th>dsf</th>    <th>sdf</th>    <th>a</th>    <th>sdf</th>    <th>adsf</th>  </tr>  <tr>    <td>1324</td>    <td>2</td>    <td>33</td>    <td>4</td>    <td>5</td>  </tr></table>";
 		
 
 	
