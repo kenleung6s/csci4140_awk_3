@@ -16,7 +16,6 @@
 
 // Game globals.
 
-var hitRecord = [false,false,false,false,false,false,false,false,false,false];
 var game_round  = 1;
 
 var total_throws = 0;
@@ -1728,7 +1727,7 @@ function monitor_bowling_pins( )
 			{
 
 				bowling_pins[ hit_bowling_pins[ i ] ][ 1 ].visible = false;
-				hitRecord[i] = true;
+				
 				bowling_pins[ hit_bowling_pins[ i ] ][ 0 ].collisionFilterGroup = 2;
 		
 			}
@@ -1800,7 +1799,10 @@ function monitor_bowling_pins( )
 
 function reset_bowling_pins( )
 {
-	
+	if (currentPlayer == 1) p1score[game_round] = 20;
+	if (currentPlayer == 2) p2score[game_round] = 20;
+	if (currentPlayer == 3) p3score[game_round] = 20;
+	if (currentPlayer == 4) p4score[game_round] = 20;
 	var i = bowling_pins.length;
 			
 	while ( i-- )
@@ -1983,10 +1985,10 @@ function handle_score_div( )
 	for (i=0; i<10; i++){
 		if (hitRecord[i] == true) count += 1;
 	}
-	if (currentPlayer == 1) p1score[game_round] = count;
-	if (currentPlayer == 2) p2score[game_round] = count;
-	if (currentPlayer == 3) p3score[game_round] = count;
-	if (currentPlayer == 4) p4score[game_round] = count;
+	if (currentPlayer == 1) p1score[game_round] -= 5;
+	if (currentPlayer == 2) p2score[game_round] -= 5;
+	if (currentPlayer == 3) p3score[game_round] -= 5;
+	if (currentPlayer == 4) p4score[game_round] -= 5;
 	for (i=1; i<11; i++){
 		if (p1score[i]){
 			p1html += "<td>"+p1score[i]+"</td>";
