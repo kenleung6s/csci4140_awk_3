@@ -1984,19 +1984,19 @@ function handle_score_div( )
 	if (currentPlayer == 4) p4score[game_round] = 25-current_round_throws*5;
 	
 	for (i=1; i<11; i++){
-		if (p1score[i]){
+		if (p1score[i] != undefined){
 			p1html += "<td>"+p1score[i]+"</td>";
 			p1total += p1score[i];
 		}
-		if (p2score[i]){
+		if (p2score[i] != undefined){
 			p2html += "<td>"+p2score[i]+"</td>";
 			p2total += p2score[i];
 		}
-		if (p3score[i]){
+		if (p3score[i] != undefined){
 			p3html += "<td>"+p3score[i]+"</td>";
 			p3total += p3score[i];
 		}
-		if (p4score[i]){
+		if (p4score[i] != undefined){
 			p4html += "<td>"+p4score[i]+"</td>";
 			p4total += p4score[i];
 		}
