@@ -1679,6 +1679,9 @@ function monitor_bowling_pins( )
 			resets += 1;
 			if (resets > maxReset) maxReset = resets;
 			console.log(maxReset);
+			if(maxReset == 10){
+				handle_score_div();
+			}
 			bowling_pins_reset = false;
 			
 			if ( bowling_pin[ 1 ].visible )
@@ -1774,9 +1777,12 @@ function monitor_bowling_pins( )
 				tween.start( );
 				
 			}
-			
-			current_round_throws = 0;
-			maxReset = 0;
+			if (current_round_throws == 2){
+				round -= 1;
+			} else {
+				current_round_throws = 0;			
+				maxReset = 0;
+			}
 		}, 10 );
 		
 		timers.push( timer );
