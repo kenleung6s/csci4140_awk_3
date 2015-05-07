@@ -52,7 +52,7 @@ function releaseBall(){
 	var fx = (fx1-fx0)*-4000;
 	var fy = (fy1-fy0)*-18000;
 	sendThrowMotion(fx,fy);
-	//alert('fx:'+fx+' fy:'+fy);
+	alert('fx:'+fx+' fy:'+fy);
 	ball_throwing = false;
 }
 
@@ -66,7 +66,7 @@ function deviceMotionHandler(eventData) {
 	rot_gamma = eventData.rotationRate.gamma;
 	if (osUse == 1){
 		rot_alpha *= 0.0174532925;
-		rot_beta *= 0.0174532925;
+		rot_beta *= 0.0174532925;		
 		rot_gamma *= 0.0174532925 ;
 	}
 	if ( ball_throwing == false){
