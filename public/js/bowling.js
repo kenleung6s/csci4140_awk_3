@@ -1958,30 +1958,12 @@ function handle_round_div( )
 function handle_score_div( )
 {
 	
-	if ( total_throws == 0 )
-	{
-		
-		var score = Math.floor( game_round / 1 * 100 );
-		
-		if ( score > 100 ) score = 100;
-		
-		if ( score < 0 ) score = 0;
-		
-		score_div.innerHTML = "Score: " + score + "%";
-		
-	}
-	else
-	{
-		
-		var score = Math.floor( game_round / total_throws * 100 );
-		
-		if ( score > 100 ) score = 100;
-		
-		if ( score < 0 ) score = 0;
 	
-		score_div.innerHTML = "Score: " + score + "%";
 		
-	}
+		score_div.innerHTML = "<table>  <tr>    <th>dsf</th>    <th>sdf</th>    <th></th>    <th>sdf</th>    <th></th>  </tr>  <tr>    <td></td>    <td></td>    <td></td>    <td></td>    <td></td>  </tr></table>";
+		
+
+	
 	
 }
 
