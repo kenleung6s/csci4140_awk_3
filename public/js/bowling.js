@@ -1744,7 +1744,7 @@ function monitor_bowling_pins( )
 	
 	}	
 	
-	if ( resets == bowling_pins.length )
+	if ( (resets == bowling_pins.length)||(current_round_throws > 2) )
 	{
 		
 		resetting_bowling_pins = true;
@@ -1754,7 +1754,7 @@ function monitor_bowling_pins( )
 			reset_bowling_pins( );
 			
 			reset_bowling_ball( );
-	
+			
 			if (currentPlayer % joinedPlayers.length == 0) game_round += 1;
 			currentPlayer = (currentPlayer % joinedPlayers.length) + 1;
 			
@@ -1792,7 +1792,7 @@ function monitor_bowling_pins( )
 			}
 			
 			current_round_throws = 0;
-			
+			maxReset = 0;
 		}, 10 );
 		
 		timers.push( timer );
@@ -1984,10 +1984,10 @@ function handle_score_div( )
 	var p3total = 3;
 	var p4total = 4;
 	
-	if (currentPlayer == 1) p1score[game_round] = 30-current_round_throws*5;
-	if (currentPlayer == 2) p2score[game_round] = 30-current_round_throws*5;
-	if (currentPlayer == 3) p3score[game_round] = 30-current_round_throws*5;
-	if (currentPlayer == 4) p4score[game_round] = 30-current_round_throws*5;
+	if (currentPlayer == 1) p1score[game_round] = maxReset;
+	if (currentPlayer == 2) p2score[game_round] = maxReset;
+	if (currentPlayer == 3) p3score[game_round] = maxReset;
+	if (currentPlayer == 4) p4score[game_round] = maxReset;
 	
 	for (i=1; i<11; i++){
 		if (p1score[i] != undefined){
@@ -2008,7 +2008,10 @@ function handle_score_div( )
 		}
 	
 	}
-	
+	p1html += "<td>"+p1total+"</td>";
+	p2html += "<td>"+p2total+"</td>";
+	p3html += "<td>"+p3total+"</td>";
+	p4html += "<td>"+p4total+"</td>";
 	
 		
 	temp += "<table class = 'table table-bordered'> \
