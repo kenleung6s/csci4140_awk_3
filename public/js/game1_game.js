@@ -31,7 +31,7 @@ function showResult() {
 }
 
 function deviceMotionHandler(eventData) {
-	var rotGamma = eventData.rotationRate.gamma - CALI_ROTATEGAMMA;
+	var rotGamma = eventData.rotationRate.gamma - CALI_ROTGAMMA;
 	if ( BALL_THOWN == false){
 		sendRotGamma(rotGamma);
 	}
@@ -42,7 +42,7 @@ function deviceMotionHandler(eventData) {
 }
 
 function calibrate(){
-	CALI_ROTATEGAMMA = eventData.rotationRate.gamma;
+	CALI_ROTGAMMA = eventData.rotationRate.gamma;
 }
 
 function round(val) {
