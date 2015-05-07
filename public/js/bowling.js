@@ -1971,7 +1971,6 @@ function handle_score_div( )
 {
 		//round_div.innerHTML = "Round: " + game_round;
 	score_div.innerHTML = "Player"+currentPlayer+"'s Turn";
-	console.log(hit_bowling_pins.length);
 	var p1html = "";
 	var p2html = "";
 	var p3html = "";
