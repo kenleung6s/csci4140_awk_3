@@ -12,32 +12,7 @@ var fx1;
 var fy1;
 var osUse;
 
-function showResult() {
-    var localClientScore = [0,0,0,0];
-    for (var i = 0; i < NUM_OF_PLAYERS; ++i)
-        localClientScore[i] = clientScore[i];
-    
-    winner = 0;
-    for (var i = 1; i <= NUM_OF_PLAYERS-1; i++)
-        if (localClientScore[i] > localClientScore[winner])
-            winner = i;
-    setTimeout(function() {
-        for (var i = 1; i <= NUM_OF_PLAYERS; i++)
-            document.getElementById('GameResult' + i).setAttribute('class', 'btn btn-lg btn-remote');
-        for (var i = 0; i <= NUM_OF_PLAYERS-1; i++)
-            if (localClientScore[i] == localClientScore[winner]) {
-                var element = document.getElementById('GameResult' + (i+1));
-                element.setAttribute('class', 'btn btn-lg btn-remote btn-success');
-                element.textContent = 'WIN';
-            } else {
-                var element = document.getElementById('GameResult' + (i+1));
-                element.setAttribute('class', 'btn btn-lg btn-remote btn-danger');
-                element.textContent = 'LOSE';
-            }
-        document.getElementById('StartGroup').setAttribute('class', 'form-group');
-    }, 500 * (localClientScore[winner] / 6 + 1));
-    console.log('Set result timeout functions');
-}
+
 
 function holdBall(){
 	ball_throwing = true;
@@ -74,11 +49,7 @@ function deviceMotionHandler(eventData) {
 			console.log(rot_gamma);
 			sendRotGamma(rot_gamma);
 		}
-	}
-    var acceZ = eventData.acceleration.z;
-    if (acceZ > MIN_ACCE) {
-        sendSwing(acceZ);
-    }
+
 }
 
 function round(val) {
