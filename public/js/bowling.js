@@ -1685,8 +1685,7 @@ function monitor_bowling_pins( )
 		     Math.abs( bowling_pin[ 1 ].position.z - bowling_pin[ 0 ].initPosition.z ) > distance )
 		{
 			
-			resets += 1;
-			pinHits += 1;
+			resets += 1;			
 			bowling_pins_reset = false;
 			
 			if ( bowling_pin[ 1 ].visible )
@@ -1964,7 +1963,7 @@ function handle_score_div( )
 {
 		//round_div.innerHTML = "Round: " + game_round;
 	score_div.innerHTML = "";
-	console.log(pinHits);
+	console.log(hit_bowling_pins.length);
 	var p1html = "";
 	var p2html = "";
 	var p3html = "";
