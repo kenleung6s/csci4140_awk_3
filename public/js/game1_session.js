@@ -15,7 +15,7 @@ socket.on('register', function(sId, cId) {
     sessionId = sId;
     clientId = getClientId();
     if (clientId == 0) { // If at main screen, do work
-        var element = document.getElementById('QR' + cId);
+        var element = document.getElementById('QRButton' + cId);
         if (element !== null)
             element.parentNode.removeChild(element);
     }
