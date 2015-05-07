@@ -41,7 +41,7 @@ socket.on('rotGamma', function(recvClientId, data) {
 
 socket.on('throwMotion', function(recvClientId, fx,fy) {
     if (clientId == 0) { // If at main screen, do work
-		if (recvClientId = currentPlayer){
+		if (recvClientId == currentPlayer){
 		   console.log('Receive id '+recvClientId+' throwMotion: ' + 'fx:'+fx+' fy:'+fy);
 		   throwBall(fx,fy);
 		}
