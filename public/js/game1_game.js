@@ -2,7 +2,11 @@
 var NUM_OF_LEVELS = 12;
 var NUM_OF_PLAYERS = 4;
 var CALI_ROTGAMMA = 0;
-var BALL_THOWN = false;
+var ball_thowing = false;
+var rot_alpha;
+var rot_beta;
+var rot_gamma;
+
 function showResult() {
     var localClientScore = [0,0,0,0];
     for (var i = 0; i < NUM_OF_PLAYERS; ++i)
@@ -30,7 +34,23 @@ function showResult() {
     console.log('Set result timeout functions');
 }
 
-function getThrowMotion(){
+function holdBall(){
+	ball_throwing = true;
+	var fx0 = rot_alpha;
+	var fy0 = rot_beta;
+	var fx1;
+	var fy1;
+	while (ball_throwing == true){
+		fx1 = rot_alpha;
+		fy1 = rot_beta;
+	}
+	var fx = fx1-fx0;
+	var fy = fy1-fy0;
+	console.log('fx:'+fx+' fy:'+fy);
+}
+
+function releaseBall(){
+	ball_throwing = false
 }
 
 
@@ -38,10 +58,12 @@ function getThrowMotion(){
 
 
 function deviceMotionHandler(eventData) {
-	var rotGamma = eventData.rotationRate.gamma - CALI_ROTGAMMA;
-	if ( BALL_THOWN == false){
-		if(Math.abs(eventData.rotationRate.gamma) > 0.2)
-			sendRotGamma(eventData.rotationRate.gamma);
+	rot_alpha = eventData.rotationRate.alpha;
+	rot_beta = eventData.rotationRate.beta;
+	rot_gamma = eventData.rotationRate.gamma;
+	if ( ball_thowing == false){
+		if(Math.abs(rot_gamma) > 0.2)
+			sendRotGamma(rot_gamma);
 	}
     var acceZ = eventData.acceleration.z;
     if (acceZ > MIN_ACCE) {
