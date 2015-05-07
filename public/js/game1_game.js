@@ -63,7 +63,7 @@ function deviceMotionHandler(eventData) {
 	rot_alpha = eventData.rotationRate.alpha;
 	rot_beta = eventData.rotationRate.beta;
 	rot_gamma = eventData.rotationRate.gamma;
-	if ( (ball_throwing == false)&&(bowling_ball_thrown == false)){
+	if ( ball_throwing == false){
 		if(Math.abs(rot_gamma) > 0.2)
 			sendRotGamma(rot_gamma);
 	}
