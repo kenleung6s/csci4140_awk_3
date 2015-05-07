@@ -2,7 +2,7 @@
 var NUM_OF_LEVELS = 12;
 var NUM_OF_PLAYERS = 4;
 var CALI_ROTGAMMA = 0;
-var ball_thowing = false;
+var ball_throwing = false;
 var rot_alpha;
 var rot_beta;
 var rot_gamma;
