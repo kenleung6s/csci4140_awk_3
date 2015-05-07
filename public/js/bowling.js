@@ -228,7 +228,7 @@ function set_system_settings_level( )
 		
 	} */
 	
-	system_settings_level = 2;
+	system_settings_level = 1;
 		
 	initialize( );
 	
@@ -2424,4 +2424,4 @@ function mouse_3d_intersection( x, y )
 }
 
 //begin
-window.onload = set_system_settings_level;
+

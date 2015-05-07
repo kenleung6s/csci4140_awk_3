@@ -102,6 +102,7 @@ function startGame_ScreenSide() {
     }
     setTimeout(showResult, 6000);
     console.log("Start game");
+	window.onload = set_system_settings_level;
 }
 
 function init() {
