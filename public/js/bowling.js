@@ -1,18 +1,4 @@
-/*
- * David Lettier (C) 2014.
- * 
- * http://www.lettier.com/
- * 
- * 3D Bowling Game
- * 
- * Dependencies:
- * 
- *      Three.js
- *      Cannon.js
- *      Tween.js
- *      Buzz.js
- * 
- */
+
 
 // Game globals.
 
@@ -525,15 +511,13 @@ function initialize_2d( )
 	instructions_div.innerHTML    = "<font style='font-size: 50px;'>Instructions:</font>" +
 	"<br><br>" +
 	"You can move the ball from side-to-side by moving the mouse over the bowling ball. " +
-	"To throw the ball: hold down the left-mouse button (LMB) over the ball, move the mouse in the direction you want the ball to go, and then release the LMB. " +
-	"The longer you hold down the LMB, the slower the ball will move. " +
-	"The throwing power is indicated by the green bar, located by the mouse cursor. " +
-	"After you throw the ball, you can click the LMB once to return the ball." +
+	"To throw the ball: before swing press down the the button on mobile screen, swing your arm like throwing a bowling ball, and then release the button. " +
+	"The faster you swing, the faster the ball will move. " +
+	"After you throw the ball, you can touch the button once to return the ball." +
 	"<br><br>" +
 	"A single game lasts for 10 rounds. " +
-	"You must knock down all of the pins each round. " +
-	"Every throw lowers your score, so use the least amount of throws you can. " +
-	"Use only 10 throws, per game, to get a maximum score." +
+	"You have two throws each round. " +
+	"The more bowling pins you knock dwon, the higher your score." +
 	"<br><br>" + 
 	"Use Google Chrome for a full experience.";
 	document.body.appendChild( instructions_div );
