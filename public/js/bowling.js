@@ -134,6 +134,11 @@ var textures_loaded = 0;
 
 var number_of_textures = 0;
 
+var p1score = [];
+var p2score = [];
+var p3score = [];
+var p4score = [];
+
 function set_system_settings_level( )
 {
 	
@@ -1957,12 +1962,45 @@ function handle_round_div( )
 
 function handle_score_div( )
 {
+	var p1html = "";
+	var p2html = "";
+	var p3html = "";
+	var p4html = "";
+	for (i=1; i<11; i++){
+		if (p1score[i])	p1html += "<td>"+p1score[i]+"</td>";
+		if (p2score[i])	p1html += "<td>"+p2score[i]+"</td>";
+		if (p3score[i])	p1html += "<td>"+p3score[i]+"</td>";
+		if (p4score[i])	p1html += "<td>"+p4score[i]+"</td>";
+	}
 	
 	
 		
-		score_div.innerHTML = "<table class='table'>  <tr>    <th>dsf</th>    <th>sdf</th>    <th>a</th>    <th>sdf</th>    <th>adsf</th>  </tr>  <tr>    <td>1324</td>    <td>2</td>    <td>33</td>    <td>4</td>    <td>5</td>  </tr></table>";
+	temp = "<table> \
+	<tr> \
+    <th></th> \
+    <th>1</th> \
+    <th>2</th> \
+    <th>3</th> \
+    <th>4</th> \
+    <th>5</th> \
+    <th>6</th> \
+    <th>7</th> \
+    <th>8</th> \
+    <th>9</th> \
+    <th>10</th> \
+    <th>Total</th> \
+  </tr> \
+  <tr> \
+    <td>Player1</td> "
+	temp += p1html;
+	temp +=  "</tr><tr><td>Player2</td>"
+	temp += p2html;
+	temp += "</tr><tr><td>Player3</td>"
+	temp += p3html;
+	temp += "</tr><tr><td>Player4</td>"
+	temp += "</tr></table>"
 		
-
+score_div.innerHTML = temp;
 	
 	
 }
