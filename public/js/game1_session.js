@@ -20,63 +20,32 @@ socket.on('register', function(sId, cId) {
             element.parentNode.removeChild(element);
     }
 });
-socket.on('swing', function(recvClientId, data, time) {
-    if (clientId == 0) { // If at main screen, do work
-        var clientTime = parseInt(time);
-        var clientData = parseFloat(data);
-        if (clientTime >= startTime[recvClientId-1] && clientTime <= startTime[recvClientId-1] + 5000 && clientData > clientScore[recvClientId-1]) {
-            clientScore[recvClientId-1] = data;
-            if (data >= 10) {
-                if (clientTime - startTime[recvClientId-1] > 1000) {
-                    startTime[recvClientId-1] = clientTime - 4000;
-                }
-                if (!clientReadyEnd[recvClientId-1]) {
-                    for (var level = 0; level <= NUM_OF_LEVELS; ++level) {
-                        setTimeout(function(i, j) {
-                            return function() {
-                                var button = document.getElementById('GameButton' + j + '_' + i);
-                                if (clientScore[j-1] >= 6 * i)
-                                    button.setAttribute('class', 'btn btn-lg btn-remote button' + j + '_' + i);
-                                else
-                                    button.setAttribute('class', 'btn btn-lg btn-remote');
-                            };
-                        }(level, recvClientId), 200 * level + 1000);
-                    }
-                    clientReadyEnd[recvClientId-1] = true;
-                }
-            }
-            console.log('Received swing: from id ' + recvClientId + ', ' + data + ', at time ' + time);
-        } else {
-            console.log('Received swing: from id ' + recvClientId + ', ' + data + ', at time ' + time + ', discarded');
-        }
-    }
-});
+
 
 socket.on('rotGamma', function(recvClientId, data) {
     if (clientId == 0) { // If at main screen, do work
-       //console.log('Receive id '+recvClientId+' rotGamma:' + data);
-	   var found = false;
-	   for(i=0; i<joinedPlayers.length; i++) if (joinedPlayers[i] == recvClientId) found = true;
-		if (found == false) joinedPlayers.push(recvClientId);
-	   rotGamma = data;
-	   
-	   if((play == true)&&(bowling_ball_thrown == false)){
-		   bowling_ball[ 0 ].velocity.set( rotGamma*100, 0, 0 );
-	   }
+		if (recvClientId = currentPlayer){
+		   //console.log('Receive id '+recvClientId+' rotGamma:' + data);
+		   var found = false;
+		   for(i=0; i<joinedPlayers.length; i++) if (joinedPlayers[i] == recvClientId) found = true;
+			if (found == false) joinedPlayers.push(recvClientId);
+		   rotGamma = data;
+		   
+		   if((play == true)&&(bowling_ball_thrown == false)){
+			   bowling_ball[ 0 ].velocity.set( rotGamma*100, 0, 0 );
+		   }
+		}
     }
 });
 
 socket.on('throwMotion', function(recvClientId, fx,fy) {
     if (clientId == 0) { // If at main screen, do work
-       console.log('Receive throwMotion: ' + 'fx:'+fx+' fy:'+fy);
-	   throwBall(fx,fy);
+		if (recvClientId = currentPlayer){
+		   console.log('Receive throwMotion: ' + 'fx:'+fx+' fy:'+fy);
+		   throwBall(fx,fy);
+		}
     }
 });
-
-function sendSwing(swing) {
-    console.log('Send swing: ' + swing);
-    socket.emit('swing', clientId, swing, Date.now());
-}
 
 function sendRotGamma(rotGamma) {
     console.log('Send rotGamma: ' + rotGamma);

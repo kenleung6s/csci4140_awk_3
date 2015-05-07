@@ -61,14 +61,7 @@ io.on('connection', function (socket) {
             }
         }
     });
-    socket.on('swing', function (clientId, data, time) {
-        console.log('swing: id ' + clientId + ', data ' + data + ', time ' + time);
-        for (var roomNum in socket.rooms) {
-            if (socket.rooms[roomNum] != socket.id) {
-                io.to(socket.rooms[roomNum]).emit('swing', clientId, data, time);
-            }
-        }
-    });
+
 	socket.on('rotGamma', function (clientId, data) {
         console.log('rotGamma: id ' + clientId + ', data ' + data);
         for (var roomNum in socket.rooms) {
