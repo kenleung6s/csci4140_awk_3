@@ -76,10 +76,10 @@ function sendRotGamma(rotGamma) {
     socket.emit('rotGamma', clientId, rotGamma);
 }
 
-function sendThrowMotion(){
+function sendThrowMotion(fx,fy){
 
-	var fx = -4347.106480634161;
-	var fy = -169144.13881713708;
+	//var fx = -4347.106480634161;
+	//var fy = -169144.13881713708;
 	console.log('Send throwMotion: ' + 'fx:' + fx + ' fy:'+fy);
     socket.emit('throwMotion', clientId, fx,fy);
 

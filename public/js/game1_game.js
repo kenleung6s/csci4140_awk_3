@@ -40,17 +40,18 @@ function showResult() {
 
 function holdBall(){
 	ball_throwing = true;
-	fx0 = rot_alpha;
-	fy0 = rot_beta;		
+	fy0 = rot_alpha;
+	fx0 = rot_beta;		
 }
 
 function releaseBall(){
-	fx1 = rot_alpha;
-		fy1 = rot_beta;
+	fy1 = rot_alpha;
+	fx1 = rot_beta;
 
-	var fx = fx1-fx0;
-	var fy = fy1-fy0;
-	alert('fx:'+fx+' fy:'+fy);
+	var fx = (fx1-fx0)*20000;
+	var fy = (fy1-fy0)*20000;
+	sendThrowMotion(fx,fy);
+	//alert('fx:'+fx+' fy:'+fy);
 	ball_throwing = false
 }
 
