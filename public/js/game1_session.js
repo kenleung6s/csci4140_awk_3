@@ -50,7 +50,7 @@ socket.on('swing', function(recvClientId, data, time) {
 
 socket.on('rotGamma', function(recvClientId, data) {
     if (clientId == 0) { // If at main screen, do work
-       console.log('Receive rotGamma': + data);
+       console.log('Receive rotGamma:' + data);
     }
 });
 
