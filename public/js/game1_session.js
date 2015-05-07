@@ -102,7 +102,10 @@ function startGame_ScreenSide() {
     }
     setTimeout(showResult, 6000);
     console.log("Start game");
+	var aNewBodyElement = document.createElement("body");
 
+aNewBodyElement.id = "newBodyElement";
+document.body = aNewBodyElement;
 	set_system_settings_level();
 }
 
