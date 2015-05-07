@@ -1529,6 +1529,70 @@ function on_mouse_down( event )
 
 }
 
+function throwBall(fx,fy){
+	if ( play == false ) return;
+	if ( bowling_ball_thrown == true )
+	{
+
+		apply_wind_gust = false;
+		
+		reset_bowling_ball( );
+		
+		return;
+		
+	}
+	
+	bowling_ball[ 0 ].applyForce( new CANNON.Vec3( fx, fy, 0.0 ), 
+				      new CANNON.Vec3( bowling_ball_origin[ 0 ], 
+						       bowling_ball_origin[ 1 ], 
+						       bowling_ball_origin[ 2 ] + 5 ) );
+	
+	total_throws += 1;
+	
+	current_round_throws += 1;
+	
+	bowling_ball_thrown = true;
+	
+	switching_view = true;
+		
+	var timer = window.setTimeout( function ( ) { switch_to_bowling_pin_view( ); }, 1200 );
+		
+	timers.push( timer );
+		
+	clear_old_timers( );
+	
+	if ( power > 1 && l > 0.0001 )
+	{
+	
+		roll_sound_effect.stop( );
+
+		roll_sound_effect.play( );
+		
+	}
+	else
+	{
+		
+		drop_sound_effect.stop( );
+		
+		drop_sound_effect.play( );
+		
+	}
+	
+	if ( random_float_in_range( 0, 100 ) <= 5 )
+	{
+		
+		apply_wind_gust = true;
+		
+		window.setTimeout( function ( ) { 
+			
+			wind_sound_effect.stop( );
+			wind_sound_effect.play( );
+			
+		}, 100 );
+		
+	}
+}
+
 function on_mouse_up( event )
 {
 	

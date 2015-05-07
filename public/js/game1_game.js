@@ -30,6 +30,11 @@ function showResult() {
     console.log('Set result timeout functions');
 }
 
+function getThrowMotion(){
+}
+
+
+
 
 
 function deviceMotionHandler(eventData) {
@@ -42,10 +47,6 @@ function deviceMotionHandler(eventData) {
     if (acceZ > MIN_ACCE) {
         sendSwing(acceZ);
     }
-}
-
-function calibrate(){
-	CALI_ROTGAMMA = eventData.rotationRate.gamma;
 }
 
 function round(val) {

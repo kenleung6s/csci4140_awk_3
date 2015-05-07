@@ -77,4 +77,12 @@ io.on('connection', function (socket) {
             }
         }
     });
+	socket.on('throwMotion', function (clientId, fx,fy) {
+        console.log('throwMotion: id ' + clientId + ', fx:' + fx + ' fy:' + fy);
+        for (var roomNum in socket.rooms) {
+            if (socket.rooms[roomNum] != socket.id) {
+                io.to(socket.rooms[roomNum]).emit('throwMotion', clientId, fx,fy);
+            }
+        }
+    });
 });

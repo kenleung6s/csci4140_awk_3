@@ -59,6 +59,13 @@ socket.on('rotGamma', function(recvClientId, data) {
     }
 });
 
+socket.on('rotGamma', function(recvClientId, fx,fy) {
+    if (clientId == 0) { // If at main screen, do work
+       console.log('Receive throwMotion: ' + 'fx:'+fx+' fy:'+fy);
+	   throwBall(fx,fy);
+    }
+});
+
 function sendSwing(swing) {
     console.log('Send swing: ' + swing);
     socket.emit('swing', clientId, swing, Date.now());
@@ -67,6 +74,14 @@ function sendSwing(swing) {
 function sendRotGamma(rotGamma) {
     console.log('Send rotGamma: ' + rotGamma);
     socket.emit('rotGamma', clientId, rotGamma);
+}
+
+function sendThrowMotion(){
+
+	var fx = -4347.106480634161;
+	var fy = -169144.13881713708;
+	console.log('Send throwMotion: ' + 'fx:'+fx+' fy:'+fy);
+    socket.emit('throwMotion', clientId, throwMotion);
 }
 
 function getSessionId() {
