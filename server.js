@@ -27,7 +27,7 @@ app.get('/session/:roomId/:clientId', function (request, response) {
         var clientId = parseInt(request.params.clientId);
         if (roomIdInt >= 1 && roomIdInt <= 10000) {
             if (clientId == 0)
-                response.sendFile(__dirname + '/views/index2.html');
+                response.sendFile(__dirname + '/views/index.html');
             else if (clientId <= 4)
                 response.sendFile(__dirname + '/views/client.html');
             else
