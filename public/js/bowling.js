@@ -1692,10 +1692,10 @@ function monitor_bowling_pins( )
 			
 			bowling_pins_reset = false;
 			
-			if ( bowling_pin[ i ].visible )
+			if ( bowling_pin[ 1 ].visible )
 			{
-				count += 1;
-				hitRecord[i] = true;
+				
+				
 				hit_bowling_pins.push( i );				
 			}
 			
@@ -1728,7 +1728,7 @@ function monitor_bowling_pins( )
 			{
 
 				bowling_pins[ hit_bowling_pins[ i ] ][ 1 ].visible = false;
-			
+				hitRecord[i] = true;
 				bowling_pins[ hit_bowling_pins[ i ] ][ 0 ].collisionFilterGroup = 2;
 		
 			}
