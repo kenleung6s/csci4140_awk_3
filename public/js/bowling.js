@@ -1027,7 +1027,7 @@ function initialize_3d()
 		
 		renderer.shadowMapEnabled = true;
 		renderer.shadowMapSoft    = true;
-/* 			
+			
 		spot_light                     = new THREE.SpotLight( 0xFFF5BA, 1.0 );
 		spot_light.castShadow          = true;
 		spot_light.shadowMapWidth      = 256;
@@ -1040,10 +1040,10 @@ function initialize_3d()
 		spot_light.shadowCameraVisible = false;
 		spot_light.position.set( 200, 0, 300 );
 		spot_light.lookAt( -200, 0, 0 );
-		scene.add( spot_light ); */
+		scene.add( spot_light );
 		
-		var amlight = new THREE.AmbientLight( 0x404040 ); // soft white light
-		scene.add( amlight );
+		hemiLight = new THREE.HemisphereLight( 0x0000ff, 0x00ff00, 0.6 ); 
+		scene.add( hemiLight );
 		
 	}
 	else if ( system_settings_level == 2 )
