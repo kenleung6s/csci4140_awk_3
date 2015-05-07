@@ -51,7 +51,8 @@ function releaseBall(){
 	var fx = (fx1-fx0)*2000;
 	var fy = (fy1-fy0)*-12000;
 	sendThrowMotion(fx,fy);
-	//alert('fx:'+fx+' fy:'+fy);	
+	//alert('fx:'+fx+' fy:'+fy);
+	ball_throwing = false;
 }
 
 
@@ -62,7 +63,7 @@ function deviceMotionHandler(eventData) {
 	rot_alpha = eventData.rotationRate.alpha;
 	rot_beta = eventData.rotationRate.beta;
 	rot_gamma = eventData.rotationRate.gamma;
-	if ( ball_thowing == false){
+	if ( (ball_throwing == false)&&(bowling_ball_thrown = false)){
 		if(Math.abs(rot_gamma) > 0.2)
 			sendRotGamma(rot_gamma);
 	}
