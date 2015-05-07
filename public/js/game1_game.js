@@ -40,10 +40,10 @@ function holdBall(){
 	var fy0 = rot_beta;
 	var fx1;
 	var fy1;
-	while (ball_throwing == true){
+	//while (ball_throwing == true){
 		fx1 = rot_alpha;
 		fy1 = rot_beta;
-	}
+	//}
 	var fx = fx1-fx0;
 	var fy = fy1-fy0;
 	alert('fx:'+fx+' fy:'+fy);
