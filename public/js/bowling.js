@@ -15,7 +15,7 @@
  */
 
 // Game globals.
-
+var count = 0;
 var game_round  = 1;
 
 var total_throws = 0;
@@ -1693,18 +1693,18 @@ function monitor_bowling_pins( )
 			
 			if ( bowling_pin[ 1 ].visible )
 			{
-			
+				count += 1;
 				hit_bowling_pins.push( i );
-				
+				if (currentPlayer == 1) p1score[game_round] = count;
+				if (currentPlayer == 2) p2score[game_round] = count;
+				if (currentPlayer == 3) p3score[game_round] = count;
+				if (currentPlayer == 4) p4score[game_round] = count;
 			}
 			
 		}
 		
 	}
-	if (currentPlayer == 1) p1score[game_round] = hit_bowling_pins.length;
-	if (currentPlayer == 2) p2score[game_round] = hit_bowling_pins.length;
-	if (currentPlayer == 3) p3score[game_round] = hit_bowling_pins.length;
-	if (currentPlayer == 4) p4score[game_round] = hit_bowling_pins.length;
+	
 	
 	if ( hit_bowling_pins.length > 0 && ( new Date( ) ).valueOf( ) - hit_sound_effect_played > 2000 )
 	{
@@ -1970,6 +1970,7 @@ function handle_round_div( )
 function handle_score_div( )
 {
 		//round_div.innerHTML = "Round: " + game_round;
+	score_div.innerHTML = "";
 	temp = "Player"+currentPlayer+"'s Turn <br>";
 	var p1html = "";
 	var p2html = "";
