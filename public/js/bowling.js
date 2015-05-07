@@ -1243,7 +1243,10 @@ function initialize_opening_sequence( )
 	opening_sequence.onComplete( function( ) {
 		
 		start_div.style.visibility = "visible";
-		logo_div.style.visibility  = "visible";
+		instructions_div.style.top  = ( start_div.offsetTop - instructions_div.clientHeight ) - 10 + "px";
+		
+		instructions_div.style.visibility = "visible";
+		logo_div.style.visibility         = "hidden";
 		
 		opening_sequence = 0;
 	
@@ -1690,7 +1693,7 @@ function monitor_bowling_pins( )
 		{
 			
 			resets += 1;
-			if (reset > maxReset) maxReset = reset;
+			if (resets > maxReset) maxReset = resets;
 			console.log(maxReset);
 			bowling_pins_reset = false;
 			
