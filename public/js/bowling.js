@@ -1957,11 +1957,6 @@ function handle_round_div( )
 {
 	
 	round_div.innerHTML = "Round: " + game_round;
-	
-}
-
-function handle_score_div( )
-{
 	var p1html = "";
 	var p2html = "";
 	var p3html = "";
@@ -1973,9 +1968,9 @@ function handle_score_div( )
 	p2score[2] = 24;
 	for (i=1; i<11; i++){
 		if (p1score[i])	p1html += "<td>"+p1score[i]+"</td>";
-		if (p2score[i])	p1html += "<td>"+p2score[i]+"</td>";
-		if (p3score[i])	p1html += "<td>"+p3score[i]+"</td>";
-		if (p4score[i])	p1html += "<td>"+p4score[i]+"</td>";
+		if (p2score[i])	p2html += "<td>"+p2score[i]+"</td>";
+		if (p3score[i])	p3html += "<td>"+p3score[i]+"</td>";
+		if (p4score[i])	p4html += "<td>"+p4score[i]+"</td>";
 	}
 	
 	
@@ -2006,6 +2001,12 @@ function handle_score_div( )
 	temp += "</tr></table>"
 		
 score_div.innerHTML = temp;
+	
+}
+
+function handle_score_div( )
+{
+	
 	
 	
 }
