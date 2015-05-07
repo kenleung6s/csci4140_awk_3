@@ -56,7 +56,7 @@ socket.on('rotGamma', function(recvClientId, data) {
     if (clientId == 0) { // If at main screen, do work
        //console.log('Receive id '+recvClientId+' rotGamma:' + data);
 	   var found = false;
-	   for(i=0; i<joinedPlayers.length; i++) if (joinedPlayers[i] == clientId) found = true;
+	   for(i=0; i<joinedPlayers.length; i++) if (joinedPlayers[i] == recvClientId) found = true;
 		if (found == false) joinedPlayers.push(recvClientId);
 	   rotGamma = data;
 	   
