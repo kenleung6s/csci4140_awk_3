@@ -1966,6 +1966,11 @@ function handle_score_div( )
 	var p2html = "";
 	var p3html = "";
 	var p4html = "";
+	
+	p1score[1] = 12;
+	p1score[2] = 24;
+	p2score[1] = 12;
+	p2score[2] = 24;
 	for (i=1; i<11; i++){
 		if (p1score[i])	p1html += "<td>"+p1score[i]+"</td>";
 		if (p2score[i])	p1html += "<td>"+p2score[i]+"</td>";
@@ -1975,7 +1980,7 @@ function handle_score_div( )
 	
 	
 		
-	temp = "<table> \
+	temp = "<table class = "table"> \
 	<tr> \
     <th></th> \
     <th>1</th> \
