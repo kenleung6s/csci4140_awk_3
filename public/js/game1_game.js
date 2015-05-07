@@ -6,6 +6,10 @@ var ball_thowing = false;
 var rot_alpha;
 var rot_beta;
 var rot_gamma;
+var fx0;
+var fy0;
+var fx1;
+var fy1;
 
 function showResult() {
     var localClientScore = [0,0,0,0];
@@ -36,20 +40,17 @@ function showResult() {
 
 function holdBall(){
 	ball_throwing = true;
-	var fx0 = rot_alpha;
-	var fy0 = rot_beta;
-	var fx1;
-	var fy1;
-	//while (ball_throwing == true){
-		fx1 = rot_alpha;
-		fy1 = rot_beta;
-	//}
-	var fx = fx1-fx0;
-	var fy = fy1-fy0;
-	alert('fx:'+fx+' fy:'+fy);
+	fx0 = rot_alpha;
+	fy0 = rot_beta;		
 }
 
 function releaseBall(){
+	fx1 = rot_alpha;
+		fy1 = rot_beta;
+
+	var fx = fx1-fx0;
+	var fy = fy1-fy0;
+	alert('fx:'+fx+' fy:'+fy);
 	ball_throwing = false
 }
 
