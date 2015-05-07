@@ -5,6 +5,7 @@ var startTime = [0, 0, 0, 0];
 var clientScore = [0, 0, 0, 0];
 var clientReadyEnd = [false, false, false, false];
 var winner = 0;
+var rotGamma = 0;
 
 socket.on('register', function(sId, cId) {
     console.log('Received register: ' + sId + ' ' + cId);
@@ -51,6 +52,10 @@ socket.on('swing', function(recvClientId, data, time) {
 socket.on('rotGamma', function(recvClientId, data) {
     if (clientId == 0) { // If at main screen, do work
        console.log('Receive rotGamma:' + data);
+	   rotGamma = data;
+	   if(play == true){
+		   bowling_ball[ 0 ].velocity.set( 10, 0, 0 );
+	   }
     }
 });
 

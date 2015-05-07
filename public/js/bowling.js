@@ -1335,7 +1335,9 @@ function track_mouse( )
 		
 		bowling_ball[ 0 ].force.set( 0, 0, 1200 );
 		
-		if ( mouse_is_down == false && mouse_positions.length > 2 && play == true )
+		
+		
+		/* if ( mouse_is_down == false && mouse_positions.length > 2 && play == true )
 		{
 		
 
@@ -1392,49 +1394,17 @@ function track_mouse( )
 				
 			}
 			
-// 			if (  mouse_is_moving == true )
-// 			{
-// 			
-// 				
-// 				
-// 				
-// 				
-// 				bowling_ball[ 0 ].applyForce( new CANNON.Vec3( mouse_position_3d.x * xd, 0, 1200 ), 
-// 							      new CANNON.Vec3( bx, by, bz ) );
-// 			
-// 			}
-// 			else
-// 			{
-// 				
-// 				bowling_ball[ 0 ].applyForce( new CANNON.Vec3( 0, 0, 1200 ), 
-// 							      new CANNON.Vec3( bx, by, bz ) );
-// 				
-// 				bowling_ball[ 0 ].angularVelocity.set( 0.0, 0.0, bowling_ball[ 0 ].angularVelocity.z );
-// 				bowling_ball[ 0 ].velocity.set( 0.0, 0.0, bowling_ball[ 0 ].velocity.z );
-// 				bowling_ball[ 0 ].force.set( 0.0, 0.0, bowling_ball[ 0 ].force.z );
-// 				
-// 			}
+
 			
 		}
 		else
 		{
 			
-// 			bowling_ball[ 1 ].position.set( bowling_ball_last_updated_position[ 0 ], 
-// 					                bowling_ball_last_updated_position[ 1 ],
-// 							bowling_ball_last_updated_position[ 2 ] );
+
 			
-		}
+		} */
 		
-// 		bowling_ball[ 1 ].rotation.set( 0.0, 
-// 					        0.0, 
-// 					        0.0 );
-// 		bowling_ball[ 0 ].position.set( bowling_ball[ 1 ].position.x, 
-// 					        bowling_ball[ 1 ].position.y, 
-// 					        bowling_ball[ 1 ].position.z );
-// 		bowling_ball[ 0 ].quaternion =  bowling_ball[ 1 ].quaternion;
-// 		bowling_ball[ 0 ].angularVelocity.set( 0.0, 0.0, 0.0 );
-// 		bowling_ball[ 0 ].velocity.set( 0.0, 0.0, 0.0 );
-// 		bowling_ball[ 0 ].force.set( 0.0, 0.0, 0.0 );
+
 
 		bowling_ball_last_updated_position = [ 
 			
