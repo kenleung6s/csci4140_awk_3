@@ -1731,7 +1731,7 @@ function monitor_bowling_pins( )
 	
 	}	
 	
-	if ( (resets == bowling_pins.length)||(current_round_throws >= 2) )
+	if ( (resets == bowling_pins.length)||(current_round_throws > 2) )
 	{
 		
 		resetting_bowling_pins = true;
@@ -2108,7 +2108,7 @@ function handle_game_reset( )
 			
 		}
 		
-		final_score_div.innerHTML = "Final Score:<br>" + p1total + "%<br>";
+		final_score_div.innerHTML = "Final Score:<br>"  + "%<br>";
 		
 		final_score_div.style.visibility = "visible";
 		
