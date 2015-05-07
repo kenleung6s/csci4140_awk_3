@@ -65,8 +65,8 @@ function deviceMotionHandler(eventData) {
 	rot_beta = eventData.rotationRate.beta;
 	rot_gamma = eventData.rotationRate.gamma;
 	if (osUse == 1){
-		rot_alpha *= 0.0174532925 * 2.5;
-		rot_beta *= 0.0174532925 * 2.5;		
+		rot_alpha *= 0.0174532925*1.5;
+		rot_beta *= 0.0174532925*1.5 ;		
 		rot_gamma *= 0.0174532925 ;
 	}
 	if ( ball_throwing == false){
