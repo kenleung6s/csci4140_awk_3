@@ -1042,7 +1042,7 @@ function initialize_3d()
 		spot_light.lookAt( -200, 0, 0 );
 		scene.add( spot_light );
 		
-		hemiLight = new THREE.HemisphereLight( 0x0000ff, 0x00ff00, 0.6 ); 
+		hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 ); 
 		scene.add( hemiLight );
 		
 	}
