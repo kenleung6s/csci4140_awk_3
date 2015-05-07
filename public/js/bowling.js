@@ -2045,6 +2045,7 @@ function handle_score_div( )
 	temp += "</tr><tr><td>Player3</td>"
 	temp += p3html;
 	temp += "</tr><tr><td>Player4</td>"
+	temp += p4html;
 	temp += "</tr></table>"
 		
 round_div.innerHTML = temp;
