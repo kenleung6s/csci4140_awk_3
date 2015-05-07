@@ -49,7 +49,8 @@ function deviceMotionHandler(eventData) {
 			console.log(rot_gamma);
 			sendRotGamma(rot_gamma);
 		}
-
+	}
+   
 }
 
 function round(val) {
