@@ -46,7 +46,7 @@ function holdBall(){
 	}
 	var fx = fx1-fx0;
 	var fy = fy1-fy0;
-	console.log('fx:'+fx+' fy:'+fy);
+	alert('fx:'+fx+' fy:'+fy);
 }
 
 function releaseBall(){
