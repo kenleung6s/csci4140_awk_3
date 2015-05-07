@@ -1978,10 +1978,10 @@ function handle_score_div( )
 	var p3total = 3;
 	var p4total = 4;
 	
-	if (currentPlayer == 1) p1score[game_round] = 25-current_round_throws*5;
-	if (currentPlayer == 2) p2score[game_round] = 25-current_round_throws*5;
-	if (currentPlayer == 3) p3score[game_round] = 25-current_round_throws*5;
-	if (currentPlayer == 4) p4score[game_round] = 25-current_round_throws*5;
+	if (currentPlayer == 1) p1score[game_round] = 30-current_round_throws*5;
+	if (currentPlayer == 2) p2score[game_round] = 30-current_round_throws*5;
+	if (currentPlayer == 3) p3score[game_round] = 30-current_round_throws*5;
+	if (currentPlayer == 4) p4score[game_round] = 30-current_round_throws*5;
 	
 	for (i=1; i<11; i++){
 		if (p1score[i] != undefined){
