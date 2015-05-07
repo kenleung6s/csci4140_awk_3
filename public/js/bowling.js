@@ -1525,7 +1525,7 @@ function throwBall(fx,fy){
 	
 	total_throws += 1;
 	
-	current_round_throws += 1;
+	
 	
 	bowling_ball_thrown = true;
 	
@@ -1648,7 +1648,7 @@ function reset_bowling_ball( )
 	switching_view = true;
 	
 	switch_to_throw_view( );
-	
+	current_round_throws += 1;
 }
 
 function monitor_bowling_pins( )
@@ -1731,7 +1731,7 @@ function monitor_bowling_pins( )
 	
 	}	
 	
-	if ( (resets == bowling_pins.length)||(current_round_throws > 2) )
+	if ( (resets == bowling_pins.length)||(current_round_throws >= 2) )
 	{
 		
 		resetting_bowling_pins = true;
