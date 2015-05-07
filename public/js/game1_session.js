@@ -110,6 +110,7 @@ function getClientId() {
 function registerSession() {
     var sId = getSessionId();
     var cId = getClientId();
+	alert("*");
     if (sId !== null && cId !== null) {
         socket.emit('register', sId, cId);
         console.log('Sent register message');
