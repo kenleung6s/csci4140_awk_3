@@ -17,7 +17,7 @@
 // Game globals.
 
 var game_round  = 1;
-
+var maxReset = 0;
 var total_throws = 0;
 
 var current_round_throws = 0;
@@ -493,8 +493,10 @@ function initialize_2d( )
 	
 	start_div.onmouseout = function ( ) {
 		
-		instructions_div.style.visibility = "hidden";
-		logo_div.style.visibility         = "visible";
+				instructions_div.style.top  = ( start_div.offsetTop - instructions_div.clientHeight ) - 10 + "px";
+		
+		instructions_div.style.visibility = "visible";
+		logo_div.style.visibility         = "hidden";
 		
 	}
 	
@@ -1688,7 +1690,8 @@ function monitor_bowling_pins( )
 		{
 			
 			resets += 1;
-			
+			if (reset > maxReset) maxReset = reset;
+			console.log(maxReset);
 			bowling_pins_reset = false;
 			
 			if ( bowling_pin[ 1 ].visible )
