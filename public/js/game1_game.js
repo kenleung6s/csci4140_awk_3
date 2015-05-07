@@ -40,7 +40,7 @@ function getThrowMotion(){
 function deviceMotionHandler(eventData) {
 	var rotGamma = eventData.rotationRate.gamma - CALI_ROTGAMMA;
 	if ( BALL_THOWN == false){
-		if(Math.abs(eventData.rotationRate.gamma) > 0.5)
+		if(Math.abs(eventData.rotationRate.gamma) > 0.2)
 			sendRotGamma(eventData.rotationRate.gamma);
 	}
     var acceZ = eventData.acceleration.z;

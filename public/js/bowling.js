@@ -1160,10 +1160,9 @@ function initialize_3d()
 	
 	// Events.
 	
-	throwing_div.onmousedown = on_mouse_down;
-	throwing_div.onmouseup   = on_mouse_up;
+
 	
-	window.onmousemove       = on_mouse_move;	
+
 	window.onresize          = on_resize;
 	
 	// Draw the first frame.
@@ -1505,29 +1504,7 @@ function on_mouse_move( event )
 	
 }
 
-function on_mouse_down( event )
-{
-	
-	mouse_is_down = true;
-	
-	on_mouse_down_time = ( new Date( ) ).valueOf( );
-	
-	on_mouse_down_position = [ event.clientX, event.clientY ];
-	
-	if ( mouse_3d_intersection( event.clientX, event.clientY ).id == bowling_ball[ 1 ].id )
-	{
-	
-		on_mouse_down_mouse_on_ball = true;
-		
-	}
-	else
-	{
-		
-		on_mouse_down_mouse_on_ball = false;
-		
-	}
 
-}
 
 function throwBall(fx,fy){
 	if ( play == false ) return;
@@ -1593,129 +1570,7 @@ function throwBall(fx,fy){
 	}
 }
 
-function on_mouse_up( event )
-{
-	
-	mouse_is_down = false;
-	
-	if ( play == false ) return;
-	
-	if ( bowling_ball_thrown == true )
-	{
 
-		apply_wind_gust = false;
-		
-		reset_bowling_ball( );
-		
-		return;
-		
-	}
-	
-	if ( on_mouse_down_mouse_on_ball == false ) return;
-	
-	on_mouse_down_mouse_on_ball = false;
-	
-	var x1 = on_mouse_down_position[ 0 ];
-	var y1 = on_mouse_down_position[ 1 ];
-	
-	var x2 = event.clientX;
-	var y2 = event.clientY;
-	
-	var position1 = screen_position_2d_to_3d( x1, y1, 0 );
-	var position2 = screen_position_2d_to_3d( x2, y2, 0 );
-	
-	if ( y2 - y1 > 0 ) return;
-	
-	var translate_x = bowling_ball_last_updated_position[ 0 ] - position1.x;
-	var translate_y = bowling_ball_last_updated_position[ 1 ] - position1.y;
-	
-	position1.x += translate_x;
-	position1.y += translate_y;
-	
-	position2.x += translate_x;
-	position2.y += translate_y;
-	
-	var xd = position2.x - position1.x;
-	var yd = position2.y - position1.y;
-	
-	var x = xd;
-	var y = yd;
-	
-	var l = Math.sqrt( ( xd * xd ) + ( yd * yd ) );
-	
-	if ( l != 0.0 )
-	{
-		x = xd / l;
-		y = yd / l;
-		
-	}
-	
-	if ( y > 0 )
-	{
-		
-		y *= -1;
-		x *= -1;
-		
-	}
-	
-	var power = calculate_power_level( )
-	
-	if ( power < 0 ) power = 0;
-	
-	var fx = x * power;
-	var fy = y * power;
-
-	bowling_ball[ 0 ].applyForce( new CANNON.Vec3( fx, fy, 0.0 ), 
-				      new CANNON.Vec3( bowling_ball_origin[ 0 ], 
-						       bowling_ball_origin[ 1 ], 
-						       bowling_ball_origin[ 2 ] + 5 ) );
-	
-	total_throws += 1;
-	
-	current_round_throws += 1;
-	
-	bowling_ball_thrown = true;
-	
-	switching_view = true;
-		
-	var timer = window.setTimeout( function ( ) { switch_to_bowling_pin_view( ); }, 1200 );
-		
-	timers.push( timer );
-		
-	clear_old_timers( );
-	
-	if ( power > 1 && l > 0.0001 )
-	{
-	
-		roll_sound_effect.stop( );
-
-		roll_sound_effect.play( );
-		
-	}
-	else
-	{
-		
-		drop_sound_effect.stop( );
-		
-		drop_sound_effect.play( );
-		
-	}
-	
-	if ( random_float_in_range( 0, 100 ) <= 5 )
-	{
-		
-		apply_wind_gust = true;
-		
-		window.setTimeout( function ( ) { 
-			
-			wind_sound_effect.stop( );
-			wind_sound_effect.play( );
-			
-		}, 100 );
-		
-	}
-
-}
 
 function on_resize( )
 {
