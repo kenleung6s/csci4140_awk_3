@@ -57,7 +57,7 @@ socket.on('rotGamma', function(recvClientId, data) {
        console.log('Receive id '+recvClientId+' rotGamma:' + data);
 	   var found = false;
 	   for(i=0; i<joinedPlayers.length; i++) if (joinedPlayers[i] == clientId) found = true;
-		if (found == false) joinedPlayers.push(cid);
+		if (found == false) joinedPlayers.push(clientId);
 	   rotGamma = data;
 	   
 	   if((play == true)&&(bowling_ball_thrown == false)){
