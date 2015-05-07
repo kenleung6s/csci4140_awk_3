@@ -124,7 +124,7 @@ var floor_loaded = false;
 var max_throwing_power = 200000;
 
 var world;
-
+var pinHits = 0;
 var timers = [ ];
 
 var current_view   = "throw";
@@ -1686,7 +1686,7 @@ function monitor_bowling_pins( )
 		{
 			
 			resets += 1;
-			
+			pinHits += 1;
 			bowling_pins_reset = false;
 			
 			if ( bowling_pin[ 1 ].visible )
@@ -1964,7 +1964,7 @@ function handle_score_div( )
 {
 		//round_div.innerHTML = "Round: " + game_round;
 	score_div.innerHTML = "";
-	console.log(bowling_pins.length);
+	console.log(pinHits);
 	var p1html = "";
 	var p2html = "";
 	var p3html = "";
