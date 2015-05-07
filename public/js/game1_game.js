@@ -10,6 +10,7 @@ var fx0;
 var fy0;
 var fx1;
 var fy1;
+var osUse;
 
 function showResult() {
     var localClientScore = [0,0,0,0];
@@ -63,6 +64,7 @@ function deviceMotionHandler(eventData) {
 	rot_alpha = eventData.rotationRate.alpha;
 	rot_beta = eventData.rotationRate.beta;
 	rot_gamma = eventData.rotationRate.gamma;
+	if (osUse == 1) rot_gamma /= 5;
 	if ( ball_throwing == false){
 		if(Math.abs(rot_gamma) > 0.2){
 			alert(rot_gamma);
@@ -79,3 +81,24 @@ function round(val) {
     var amt = 10;
     return Math.round(val * amt) / amt;
 }
+
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+  {
+    osUse = 1;
+
+  }
+  else if( userAgent.match( /Android/i ) )
+  {
+
+    osUse = 2;
+  }
+  else
+  {
+    osUse = 3;
+  }
+}
+
+getMobileOperatingSystem();
