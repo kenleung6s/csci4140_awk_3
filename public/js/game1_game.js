@@ -30,10 +30,13 @@ function showResult() {
     console.log('Set result timeout functions');
 }
 
+
+
 function deviceMotionHandler(eventData) {
 	var rotGamma = eventData.rotationRate.gamma - CALI_ROTGAMMA;
-	if ( BALL_THOWN == false){		
-		sendRotGamma(eventData.rotationRate.gamma);
+	if ( BALL_THOWN == false){
+		if(Math.abs(eventData.rotationRate.gamma) > 0.5)
+			sendRotGamma(eventData.rotationRate.gamma);
 	}
     var acceZ = eventData.acceleration.z;
     if (acceZ > MIN_ACCE) {
