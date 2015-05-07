@@ -134,10 +134,10 @@ var textures_loaded = 0;
 
 var number_of_textures = 0;
 
-var p1score = ["-","-","-","-","-""-","-","-","-","-"];
-var p2score = ["-","-","-","-","-""-","-","-","-","-"];
-var p3score = ["-","-","-","-","-""-","-","-","-","-"];
-var p4score = ["-","-","-","-","-""-","-","-","-","-"];
+var p1score = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+var p2score = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+var p3score = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+var p4score = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 
 var currentPlayer;
 
@@ -1979,10 +1979,10 @@ function handle_score_div( )
 	var p2html = "";
 	var p3html = "";
 	var p4html = "";
-	var p1total = 1;
-	var p2total = 2;
-	var p3total = 3;
-	var p4total = 4;
+	var p1total = 0;
+	var p2total = 0;
+	var p3total = 0;
+	var p4total = 0;
 	
 	if (currentPlayer == 1) p1score[game_round] = maxReset;
 	if (currentPlayer == 2) p2score[game_round] = maxReset;
@@ -1990,21 +1990,29 @@ function handle_score_div( )
 	if (currentPlayer == 4) p4score[game_round] = maxReset;
 	
 	for (i=1; i<11; i++){
-		if (p1score[i] != "-"){
+		if (p1score[i] != -1){
 			p1html += "<td>"+p1score[i]+"</td>";
 			p1total += p1score[i];
+		} else {
+			p1html += "<td> - </td>";
 		}
-		if (p2score[i] != "-"){
+		if (p2score[i] != -1){
 			p2html += "<td>"+p2score[i]+"</td>";
 			p2total += p2score[i];
+		} else {
+			p2html += "<td> - </td>";
 		}
-		if (p3score[i] != "-"){
+		if (p3score[i] != -1){
 			p3html += "<td>"+p3score[i]+"</td>";
 			p3total += p3score[i];
+		} else {
+			p3html += "<td> - </td>";
 		}
-		if (p4score[i] != "-"){
+		if (p4score[i] != -1){
 			p4html += "<td>"+p4score[i]+"</td>";
 			p4total += p4score[i];
+		} else {
+			p4html += "<td> - </td>";
 		}
 	
 	}
