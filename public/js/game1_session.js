@@ -11,7 +11,7 @@ var currentPlayer = 1;
 
 socket.on('register', function(sId, cId) {
     console.log('Received register: ' + sId + ' ' + cId);
-	joinedPlayers.push(cid);
+	
     sessionId = sId;
     clientId = getClientId();
     if (clientId == 0) { // If at main screen, do work
@@ -55,7 +55,12 @@ socket.on('swing', function(recvClientId, data, time) {
 socket.on('rotGamma', function(recvClientId, data) {
     if (clientId == 0) { // If at main screen, do work
        //console.log('Receive rotGamma:' + data);
+	   var found = false;
+	   for(i=0; i<joinedPlayers.length; i++)
+			if (joinedPlayers[i] == clientId) found = true;
+		if (found == true) joinedPlayers.push(cid);
 	   rotGamma = data;
+	   
 	   if((play == true)&&(bowling_ball_thrown == false)){
 		   bowling_ball[ 0 ].velocity.set( rotGamma*100, 0, 0 );
 	   }
@@ -110,7 +115,6 @@ function getClientId() {
 function registerSession() {
     var sId = getSessionId();
     var cId = getClientId();
-	alert("*");
     if (sId !== null && cId !== null) {
         socket.emit('register', sId, cId);
         console.log('Sent register message');
