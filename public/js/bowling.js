@@ -1975,7 +1975,7 @@ function handle_round_div( )
 	
 	
 		
-	temp = "<table class = 'table'> \
+	temp = "<table class = 'table table-bordered'> \
 	<tr> \
     <th></th> \
     <th>1</th> \
