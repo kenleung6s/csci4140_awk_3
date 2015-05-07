@@ -16,7 +16,7 @@
 
 // Game globals.
 
-var round  = 1;
+var game_round  = 1;
 
 var total_throws = 0;
 
@@ -1863,7 +1863,7 @@ function monitor_bowling_pins( )
 			
 			reset_bowling_ball( );
 	
-			round += 1;
+			game_round += 1;
 			
 			if ( current_round_throws == 1 )
 			{
@@ -2073,7 +2073,7 @@ function handle_power_div( )
 function handle_round_div( )
 {
 	
-	round_div.innerHTML = "Round: " + round;
+	round_div.innerHTML = "Round: " + game_round;
 	
 }
 
@@ -2083,7 +2083,7 @@ function handle_score_div( )
 	if ( total_throws == 0 )
 	{
 		
-		var score = Math.floor( round / 1 * 100 );
+		var score = Math.floor( game_round / 1 * 100 );
 		
 		if ( score > 100 ) score = 100;
 		
@@ -2095,7 +2095,7 @@ function handle_score_div( )
 	else
 	{
 		
-		var score = Math.floor( round / total_throws * 100 );
+		var score = Math.floor( game_round / total_throws * 100 );
 		
 		if ( score > 100 ) score = 100;
 		
@@ -2110,7 +2110,7 @@ function handle_score_div( )
 function handle_game_reset( )
 {
 	
-	if ( round == 11 )
+	if ( game_round == 11 )
 	{
 		
 		play = false;
@@ -2123,7 +2123,7 @@ function handle_game_reset( )
 		
 		canvas.setAttribute( "style", "-webkit-filter: grayscale( 0.5 ) blur( 10px )" );
 		
-		var score = Math.floor( round / total_throws * 100 );
+		var score = Math.floor( game_round / total_throws * 100 );
 		
 		if ( score > 100 ) score = 100;
 		
@@ -2198,7 +2198,7 @@ function handle_game_reset( )
 			
 		}, 6000 );
 		
-		round = 1;
+		game_round = 1;
 		
 		total_throws = 0;
 		
