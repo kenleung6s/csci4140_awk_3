@@ -27,7 +27,7 @@ socket.on('rotGamma', function(recvClientId, data) {
 		var found = false;
 		for(i=0; i<joinedPlayers.length; i++) if (joinedPlayers[i] == recvClientId) found = true;
 		if (found == false) joinedPlayers.push(recvClientId);
-		if (recvClientId = currentPlayer){
+		if (recvClientId == currentPlayer){
 		   console.log('Receive id '+recvClientId+' rotGamma:' + data);
 		   
 		   rotGamma = data;
@@ -42,7 +42,7 @@ socket.on('rotGamma', function(recvClientId, data) {
 socket.on('throwMotion', function(recvClientId, fx,fy) {
     if (clientId == 0) { // If at main screen, do work
 		if (recvClientId = currentPlayer){
-		   console.log('Receive throwMotion: ' + 'fx:'+fx+' fy:'+fy);
+		   console.log('Receive id '+recvClientId+' throwMotion: ' + 'fx:'+fx+' fy:'+fy);
 		   throwBall(fx,fy);
 		}
     }
@@ -75,7 +75,6 @@ function getSessionId() {
 function getClientId() {
     var pageURL = document.URL;
     var clientId = parseInt(pageURL.substr(pageURL.length - 1));
-	alert(clientId);
     if (isNaN(clientId))
         return null;
     else
