@@ -15,7 +15,8 @@
  */
 
 // Game globals.
-var count = 0;
+
+var hitRecord = [false,false,false,false,false,false,false,false,false,false];
 var game_round  = 1;
 
 var total_throws = 0;
@@ -1691,14 +1692,11 @@ function monitor_bowling_pins( )
 			
 			bowling_pins_reset = false;
 			
-			if ( bowling_pin[ 1 ].visible )
+			if ( bowling_pin[ i ].visible )
 			{
 				count += 1;
-				hit_bowling_pins.push( i );
-				if (currentPlayer == 1) p1score[game_round] = count;
-				if (currentPlayer == 2) p2score[game_round] = count;
-				if (currentPlayer == 3) p3score[game_round] = count;
-				if (currentPlayer == 4) p4score[game_round] = count;
+				hitRecord[i] = true;
+				hit_bowling_pins.push( i );				
 			}
 			
 		}
@@ -1981,6 +1979,14 @@ function handle_score_div( )
 	var p3total = 3;
 	var p4total = 4;
 	
+	var count=0;
+	for (i=0; i<10; i++){
+		if (hitRecord[i] == true) count += 1;
+	}
+	if (currentPlayer == 1) p1score[game_round] = count;
+	if (currentPlayer == 2) p2score[game_round] = count;
+	if (currentPlayer == 3) p3score[game_round] = count;
+	if (currentPlayer == 4) p4score[game_round] = count;
 	for (i=1; i<11; i++){
 		if (p1score[i]){
 			p1html += "<td>"+p1score[i]+"</td>";
