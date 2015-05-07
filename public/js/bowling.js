@@ -1338,24 +1338,10 @@ function track_mouse( )
 		if ( mouse_is_down == false && mouse_positions.length > 2 && play == true )
 		{
 		
-// 			var x = ( ( window.innerWidth  / 2 ) - mouse_positions[ mouse_positions.length - 1 ][ 0 ] )
-// 			        / ( window.innerWidth  / 2 );
-// 		
-// 			bowling_ball[ 1 ].position.set( x * 100, 
-// 					                bowling_ball_origin[ 1 ], 
-// 					                bowling_ball_origin[ 2 ] );
-// 		
-// 			if      ( bowling_ball[ 1 ].position.x >  35.0 ) bowling_ball[ 1 ].position.x =  34.9;
-// 			else if ( bowling_ball[ 1 ].position.x < -35.0 ) bowling_ball[ 1 ].position.x = -34.9;
-// 			
-// 			bowling_ball_last_updated_position = [ 
-// 								bowling_ball[ 1 ].position.x,
-// 								bowling_ball[ 1 ].position.y,
-// 								bowling_ball[ 1 ].position.z
-// 			];
+
 			
 			var mouse_position_3d = screen_position_2d_to_3d( mouse_positions[ mouse_positions.length - 1 ][ 0 ], mouse_positions[ mouse_positions.length - 1 ][ 1 ], bowling_ball[ 1 ].position.z );
-			
+			consult.log(mouse_position_3d);
 			if ( mouse_position_3d.y >= 177 && mouse_position_3d.y <= 201 )
 			{
 			
