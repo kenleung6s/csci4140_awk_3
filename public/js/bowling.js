@@ -1042,6 +1042,9 @@ function initialize_3d()
 		spot_light.lookAt( -200, 0, 0 );
 		scene.add( spot_light );
 		
+		var amlight = new THREE.AmbientLight( 0x404040 ); // soft white light
+		scene.add( amlight );
+		
 	}
 	else if ( system_settings_level == 2 )
 	{
