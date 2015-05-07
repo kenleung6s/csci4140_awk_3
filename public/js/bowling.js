@@ -282,7 +282,7 @@ function initialize_audio( )
 	
 	window.setTimeout( function ( ) {
 		
-		roll_sound_effect = new buzz.sound( "assets/audio/roll", { formats: [ "ogg", "mp3" ] } );
+		roll_sound_effect = new buzz.sound( "/assets/audio/roll", { formats: [ "ogg", "mp3" ] } );
 		
 		roll_sound_effect.setVolume( 100 );
 		
@@ -290,7 +290,7 @@ function initialize_audio( )
 		
 		roll_sound_effect.mute( );
 		
-		hit_sound_effect = new buzz.sound( "assets/audio/hit", { formats: [ "ogg", "mp3" ] } );
+		hit_sound_effect = new buzz.sound( "/assets/audio/hit", { formats: [ "ogg", "mp3" ] } );
 		
 		hit_sound_effect.setVolume( 100 );
 		
@@ -298,7 +298,7 @@ function initialize_audio( )
 		
 		hit_sound_effect.mute( );
 		
-		drop_sound_effect = new buzz.sound( "assets/audio/drop", { formats: [ "ogg", "mp3" ] } );
+		drop_sound_effect = new buzz.sound( "/assets/audio/drop", { formats: [ "ogg", "mp3" ] } );
 		
 		drop_sound_effect.setVolume( 100 );
 		
@@ -306,7 +306,7 @@ function initialize_audio( )
 		
 		drop_sound_effect.mute( );
 		
-		strike_sound_effect = new buzz.sound( "assets/audio/strike", { formats: [ "ogg", "mp3" ] } );
+		strike_sound_effect = new buzz.sound( "/assets/audio/strike", { formats: [ "ogg", "mp3" ] } );
 		
 		strike_sound_effect.setVolume( 50 );
 		
@@ -314,7 +314,7 @@ function initialize_audio( )
 		
 		strike_sound_effect.mute( );
 		
-		wind_sound_effect = new buzz.sound( "assets/audio/wind", { formats: [ "ogg", "mp3" ] } );
+		wind_sound_effect = new buzz.sound( "/assets/audio/wind", { formats: [ "ogg", "mp3" ] } );
 		
 		wind_sound_effect.setVolume( 50 );
 		
@@ -322,7 +322,7 @@ function initialize_audio( )
 		
 		wind_sound_effect.mute( );
 		
-		laugh_sound_effect = new buzz.sound( "assets/audio/laugh", { formats: [ "ogg", "mp3" ] } );
+		laugh_sound_effect = new buzz.sound( "/assets/audio/laugh", { formats: [ "ogg", "mp3" ] } );
 		
 		laugh_sound_effect.setVolume( 100 );
 		
@@ -330,7 +330,7 @@ function initialize_audio( )
 		
 		laugh_sound_effect.mute( );
 		
-		fail_sound_effect = new buzz.sound( "assets/audio/fail", { formats: [ "ogg", "mp3" ] } );
+		fail_sound_effect = new buzz.sound( "/assets/audio/fail", { formats: [ "ogg", "mp3" ] } );
 		
 		fail_sound_effect.setVolume( 100 );
 		
@@ -338,7 +338,7 @@ function initialize_audio( )
 		
 		fail_sound_effect.mute( );
 		
-		applause1_sound_effect = new buzz.sound( "assets/audio/applause1", { formats: [ "ogg", "mp3" ] } );
+		applause1_sound_effect = new buzz.sound( "/assets/audio/applause1", { formats: [ "ogg", "mp3" ] } );
 		
 		applause1_sound_effect.setVolume( 100 );
 		
@@ -346,7 +346,7 @@ function initialize_audio( )
 		
 		applause1_sound_effect.mute( );
 		
-		applause2_sound_effect = new buzz.sound( "assets/audio/applause2", { formats: [ "ogg", "mp3" ] } );
+		applause2_sound_effect = new buzz.sound( "/assets/audio/applause2", { formats: [ "ogg", "mp3" ] } );
 		
 		applause2_sound_effect.setVolume( 100 );
 		
@@ -354,7 +354,7 @@ function initialize_audio( )
 		
 		applause2_sound_effect.mute( );
 	
-		background_track = new buzz.sound( "assets/audio/background_track", { formats: [ "ogg", "mp3" ] } );
+		background_track = new buzz.sound( "/assets/audio/background_track", { formats: [ "ogg", "mp3" ] } );
 		
 		background_track.setVolume( 30 );
 		
@@ -445,7 +445,7 @@ function initialize_2d( )
 	var logo_image          = document.createElement( "img" );
 	logo_image.id           = "logo_image";
 	logo_image.className    = "logo_image";
-	logo_image.src          = "assets/images/logo.png";
+	logo_image.src          = "/assets/images/logo.png";
 	var width               = 1980 * 0.42;
 	var height              = 1080 / 1920 * width;
 	logo_image.style.width  = width  + "px";
@@ -629,24 +629,24 @@ function initialize_3d()
 	
 	number_of_textures += 1;
 	
-	loader.load( "assets/models/arena_sphere.js", function( geometry, material ) {
+	loader.load( "/assets/models/arena_sphere.js", function( geometry, material ) {
 		
 		if ( system_settings_level == 0 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/arena_sphere_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/arena_sphere_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 1 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/arena_sphere_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/arena_sphere_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 2 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/arena_sphere.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/arena_sphere.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		
@@ -664,32 +664,32 @@ function initialize_3d()
 		
 		arena_sphere = mesh;
 
-	}, "assets/models/textures/" );
+	}, "/assets/models/textures/" );
 	
 	// The bowling pin bay mesh.
 	
 	number_of_textures += 1;
 	
-	loader.load( "assets/models/bowling_pin_bay.js", function( geometry, material ) {
+	loader.load( "/assets/models/bowling_pin_bay.js", function( geometry, material ) {
 		
 		material.shading = THREE.FlatShading;
 		
 		if ( system_settings_level == 0 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bowling_pin_bay_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bowling_pin_bay_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 1 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bowling_pin_bay_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bowling_pin_bay_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 2 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bowling_pin_bay.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bowling_pin_bay.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		
@@ -705,30 +705,30 @@ function initialize_3d()
 		
 		scene.add( mesh );
 
-	}, "assets/models/textures/" );
+	}, "/assets/models/textures/" );
 	
 	// The ground floor mesh.
 
 	number_of_textures += 1;
 	
-	loader.load( "assets/models/floor.js", function( geometry, material ) {
+	loader.load( "/assets/models/floor.js", function( geometry, material ) {
 		
 		if ( system_settings_level == 0 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/hexagons_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/hexagons_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 1 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/hexagons_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/hexagons_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 2 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/hexagons.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/hexagons.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}		
 		
@@ -755,30 +755,30 @@ function initialize_3d()
 		
 		floor_loaded = true;		
 
-	}, "assets/models/textures/" );
+	}, "/assets/models/textures/" );
 	
 	// The logo billboard mesh.
 	
 	number_of_textures += 1;
 	
-	loader.load( "assets/models/logo.js", function( geometry, material ) {
+	loader.load( "/assets/models/logo.js", function( geometry, material ) {
 		
 		if ( system_settings_level == 0 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/logo_billboard_low.png", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/logo_billboard_low.png", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 1 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/logo_billboard_medium.png", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/logo_billboard_medium.png", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 2 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/logo_billboard_medium.png", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/logo_billboard_medium.png", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		
@@ -794,7 +794,7 @@ function initialize_3d()
 		
 		scene.add( mesh );	
 
-	}, "assets/models/textures/" );
+	}, "/assets/models/textures/" );
 	
 	// The bowling pin meshes and physics bodies.
 
@@ -807,24 +807,24 @@ function initialize_3d()
 	while ( i-- )
 	{
 	
-		loader.load( "assets/models/bowling_pin.js", function( geometry, material ) {
+		loader.load( "/assets/models/bowling_pin.js", function( geometry, material ) {
 			
 			if ( system_settings_level == 0 )
 			{
 				
-				material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bowling_pin_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+				material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bowling_pin_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 				
 			}
 			else if ( system_settings_level == 1 )
 			{
 				
-				material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bowling_pin_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+				material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bowling_pin_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 				
 			}
 			else if ( system_settings_level == 2 )
 			{
 				
-				material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bowling_pin.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+				material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bowling_pin.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 				
 			}
 			
@@ -861,7 +861,7 @@ function initialize_3d()
 			
 			position_index += 1;
 
-		}, "assets/models/textures/" );
+		}, "/assets/models/textures/" );
 		
 	}
 
@@ -869,24 +869,24 @@ function initialize_3d()
 	
 	number_of_textures += 1;
 	
-	loader.load( "assets/models/bowling_ball.js", function( geometry, material ) {
+	loader.load( "/assets/models/bowling_ball.js", function( geometry, material ) {
 		
 		if ( system_settings_level == 0 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bowling_ball_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bowling_ball_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 1 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bowling_ball_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bowling_ball_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 2 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bowling_ball.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bowling_ball.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		
@@ -914,30 +914,30 @@ function initialize_3d()
 		
 		bowling_ball_loaded = true;
 
-	}, "assets/models/textures/" );
+	}, "/assets/models/textures/" );
 	
 	// The bumpers.
 	
 	number_of_textures += 1;
 	
-	loader.load( "assets/models/bumpers.js", function( geometry, material ) {
+	loader.load( "/assets/models/bumpers.js", function( geometry, material ) {
 		
 		if ( system_settings_level == 0 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bumpers_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bumpers_low.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 1 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bumpers_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bumpers_medium.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		else if ( system_settings_level == 2 )
 		{
 			
-			material[ 0 ].map = THREE.ImageUtils.loadTexture( "assets/models/textures/bumpers.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
+			material[ 0 ].map = THREE.ImageUtils.loadTexture( "/assets/models/textures/bumpers.jpg", THREE.UVMapping, function ( ) { textures_loaded += 1; } );
 			
 		}
 		
@@ -953,7 +953,7 @@ function initialize_3d()
 		
 		scene.add( mesh );
 
-	}, "assets/models/textures/" );
+	}, "/assets/models/textures/" );
 	
 	// Lights.
 	
